@@ -1,0 +1,35 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.1.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+	implementation 'org.springframework.boot:spring-boot-starter-jersey'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.mongodb:mongo-java-driver:3.12.5'
+	implementation 'io.swagger:swagger-annotations'
+	implementation 'io.swagger:swagger-models'
+	implementation 'org.projectlombok:lombok'
+	implementation 'org.jongo:jongo:1.4.1'
+	compile 'io.github.cdimascio:java-dotenv:5.2.1'
+	compile ("io.springfox:springfox-swagger2:2.9.2")
+	compile ("io.springfox:springfox-swagger-ui:2.9.2")
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+}
+
+test {
+	useJUnitPlatform()
+}
